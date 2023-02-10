@@ -27,6 +27,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private string $password;
 
+    /** @throws EntityMissingAssignedId */
     public function getId(): int
     {
         return $this->id ?? throw new EntityMissingAssignedId();
